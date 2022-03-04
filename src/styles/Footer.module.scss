@@ -1,0 +1,82 @@
+@import "../scss/variables.scss";
+@import "../scss/mixins.scss";
+
+.footer {
+    @include flex(center, space-between, row);
+    font-family: "Open Sans";
+
+    .sections {
+        @include flex(center, space-between, row);
+        font-weight: 600;
+        margin: 3%;
+        width: 100%;
+
+        img {
+            cursor: pointer;
+
+            &:hover {
+                opacity: 0.5;
+                transition: all 0.8s;
+            }
+        }
+
+        .logo {
+            filter: grayscale(100%);
+            @include size(79px, 30px);
+        }
+
+        .terms,
+        .rightsReserved {
+            width: 100%;
+            @include flex(center, left, row);
+            margin-left: 4%;
+            a,
+            p {
+                font-size: 12px;
+                margin: 3px;
+                text-decoration: none;
+                color: $black;
+            }
+        }
+
+        .imagesMobile {
+            display: none;
+        }
+
+        .information {
+            @include flex(center, center, row);
+        }
+    }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 900px) {
+    .footer {
+        @include flex(center, center, column);
+
+        .logo,
+        .danone {
+            display: none;
+        }
+
+        .sections {
+            @include flex(center, center, column);
+            .imagesMobile {
+                @include flex(center, space-around, row);
+                padding-bottom: 2%;
+                width: 90%;
+                .logoMobile {
+                    filter: grayscale(100%);
+                    @include size(79px, 30px);
+                }
+            }
+
+            .terms,
+            .rightsReserved {
+                @include flex(center, center, row);
+                p {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
