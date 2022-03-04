@@ -24,8 +24,37 @@
         }
     }
 }
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .products {
+        p {
+            font-size: 22px;
+            margin-bottom: 40px;
+        }
+        .vitalineaFamily {
+            transition: 0.2s ease right;
+            padding-left: calc(100% - 60%);
+            .product {
+                p {
+                    font-size: 11px;
+                    font-weight: 600;
+                }
 
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+                .greek {
+                    @include size(178px, 106px);
+                }
+                .sugarfree {
+                    @include size(114px, 134px);
+                }
+            }
+
+            .drinkable {
+                @include size(178px, 250px);
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 900px) {
     .products {
         p {
             font-size: 22px;
