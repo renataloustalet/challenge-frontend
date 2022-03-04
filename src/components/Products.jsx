@@ -3,7 +3,6 @@ import css from '../styles/Products.module.scss'
 import griego from '../assets/products/img-vitalinea-griego.png'
 import sinAzucar from '../assets/products/img-vitalinea-sin-azucar.png'
 import bebible from '../assets/products/img-vitalinea-bebible.png'
-import fresa8 from '../assets/strawberries/img-fresas-8.png'
 
 function Products() {
   return (
