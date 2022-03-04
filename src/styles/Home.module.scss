@@ -19,9 +19,6 @@
             transform-origin: 0 100%;
         }
 
-        /*    -webkit-transition: 10s linear;
-        transition: 1s linear; */
-
         .fresa2 {
             position: absolute;
             top: -150px;
@@ -38,8 +35,8 @@
 
         .fresa5 {
             position: relative;
-            left: -30%;
-            top: -200px;
+            left: -500px;
+            top: -100px;
             transform: rotate(750deg);
         }
 
@@ -58,6 +55,7 @@
                 font-family: "Open Sans";
                 font-size: 14px;
                 width: 35%;
+                transition: 0.3s ease padding;
 
                 .flavor {
                     @include flex(center, left, row);
@@ -71,12 +69,18 @@
                         list-style: none;
                         padding: 0;
                         li {
-                            background-color: $light-red;
+                            border: 1px grey solid;
                             border-radius: 11.5px;
                             margin-right: 3%;
                             @include size(78px, 23px);
                             @include flex(center, center, row);
                             cursor: pointer;
+
+                            &:hover {
+                                border: 1px transparent solid;
+                                background-color: $light-red;
+                                transition: all 0.8s;
+                            }
                         }
                     }
                 }
@@ -112,6 +116,11 @@
                         cursor: pointer;
                         @include size(243px, 40px);
                         float: left;
+
+                        &:hover {
+                            background-color: $purple;
+                            transition: all 0.8s;
+                        }
                     }
                 }
 
@@ -139,12 +148,104 @@
                 position: relative;
                 bottom: -70px;
                 left: -40%;
+
+                &:hover {
+                    background-color: $purple;
+                    transition: all 0.8s;
+                }
             }
         }
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .home {
+        .fresa3 {
+            display: none;
+        }
+
+        .component {
+            &::after {
+                bottom: 22%;
+                transform: skewY(8deg);
+            }
+
+            .fresa2 {
+                position: absolute;
+                top: -100px;
+                right: 5%;
+                @include size(210px, 110px);
+            }
+
+            .fresa5 {
+                position: relative;
+                top: -20px;
+                left: -280px;
+                @include size(310px, 210px);
+            }
+
+            .container {
+                margin-top: 1%;
+                @include flex(center, center, column);
+                .bote {
+                    @include size(200px, 370px);
+                }
+
+                .presentation {
+                    width: 80%;
+                    margin-top: -60px;
+
+                    .flavor {
+                        font-size: 14px;
+                    }
+                    .title {
+                        font-size: 20px;
+                    }
+
+                    .description {
+                        font-size: 14px;
+                    }
+
+                    .btn {
+                        margin-top: -5%;
+                        button {
+                            width: 100%;
+                        }
+                    }
+
+                    .images {
+                        @include flex(center, center, row);
+                        margin-top: 10%;
+
+                        .image1 {
+                            margin-right: 8%;
+                            @include size(50px, 50px);
+                        }
+
+                        .image2 {
+                            @include size(65px, 50px);
+                        }
+                    }
+
+                    .arrow {
+                        margin-top: 20%;
+                        position: relative;
+                        bottom: -15px;
+                        left: 0;
+                        margin-top: 1%;
+                        @include size(40px, 40px);
+
+                        img {
+                            @include size(15px, 15px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 568px) and (max-width: 900px) {
     .home {
         .fresa3 {
             display: none;
@@ -161,12 +262,11 @@
                 position: absolute;
                 top: -100px;
                 right: 5%;
-                @include size(210px, 110px);
+                @include size(200px, 100px);
             }
 
             .container {
                 position: relative;
-                left: -10%;
                 top: -300px;
                 @include flex(center, center, column);
                 .bote {
@@ -174,17 +274,14 @@
                 }
 
                 .presentation {
-                    width: 50%;
+                    width: 70%;
                     position: relative;
                     top: -50px;
+
                     .flavor {
                         font-size: 14px;
-                        ul {
-                            li {
-                                background-color: $light-pink;
-                            }
-                        }
                     }
+
                     .title {
                         font-size: 20px;
                     }

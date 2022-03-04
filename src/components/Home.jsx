@@ -46,7 +46,6 @@ function Home() {
                             <img src={flecha} />
                         </a>
                     </div>
-
                 </div>
                 <img src={fresa3} alt='fresa' className={css.fresa3} />
             </div>

@@ -42,18 +42,74 @@
         display: none;
     }
 }
+@media only screen and (min-width: 320px) and (max-width: 568px) {
+    .container {
+        height: 70px;
+        @include flex(center, space-between, row);
+        padding-right: 5%;
+        padding-left: 5%;
 
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+        img {
+            @include size(90px, 40px);
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .mobile {
+            position: absolute;
+            display: block;
+            background-color: $white-67;
+            left: 0;
+            top: 70px;
+            @include flex(center, center, column);
+            width: 100%;
+
+            a {
+                text-decoration: none;
+                color: $black;
+            }
+        }
+
+        .menuHamburger {
+            @include size(32px, 25px);
+            display: flex;
+            transform: scale(0.98);
+            border-radius: 0;
+
+            button {
+                cursor: pointer;
+                background: none;
+                border: 0;
+                padding: 0;
+                @include size(50px, 50px);
+                outline: none;
+
+                span {
+                    border-radius: 5px;
+                    background-color: $golden-brown;
+                    display: block;
+                    width: 65%;
+                    margin: 3px;
+                    height: 3px;
+                    float: right;
+                }
+            }
+        }
+    }
+}
+@media only screen and (min-width: 568px) and (max-width: 900px) {
     .container {
         @include flex(center, space-between, row);
         padding-right: 5%;
         padding-left: 5%;
 
         .menu {
-           display: none;
+            display: none;
         }
 
-       .mobile {
+        .mobile {
             position: absolute;
             display: block;
             background-color: $white-67;
@@ -66,7 +122,7 @@
                 text-decoration: none;
                 color: $black;
             }
-        } 
+        }
 
         .menuHamburger {
             @include size(32px, 25px);
@@ -93,27 +149,7 @@
                     margin: 3px;
                     height: 3px;
                     float: right;
-
-                    .open {
-                        .middleLine {
-                            width: 50%;
-                        }
-    
-                        .topLine {
-                            transform: translateY(9px) rotate(45deg);
-                        }
-    
-                        .middleLine {
-                            opacity: 0;
-                        }
-    
-                        .bottomLine {
-                            transform: translateY(-9px) rotate(-45deg);
-                        }
-                    }
                 }
-
-                
             }
         }
     }

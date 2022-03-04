@@ -33,7 +33,7 @@ function Navbar() {
                     </a>
                 </div>
             </div>
-            <div className={`${css.menuHamburger} ${show ? css[`open`]: {}}`} onClick={handleClick}>
+            <div className={css.menuHamburger} onClick={handleClick}>
                 <button>
                     <span className={css.topLine}></span>
                     <span className={css.middleLine}></span>
