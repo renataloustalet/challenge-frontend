@@ -3,11 +3,9 @@
 
 .home {
     .component {
-        width: 100%;
         position: relative;
-        z-index: 0;
 
-        &::after{
+        &::after {
             background: linear-gradient(to bottom, #f9e6e6, #ebacac);
             box-shadow: 0 14px 44px 0 rgba(0, 0, 0, 0.09);
             content: "";
@@ -16,41 +14,50 @@
             position: absolute;
             right: 0;
             z-index: -2;
-            bottom: 25%;
+            bottom: 30%;
             transform: skewY(4.5deg);
             transform-origin: 0 100%;
         }
 
-     /*    -webkit-transition: 10s linear;
+        /*    -webkit-transition: 10s linear;
         transition: 1s linear; */
 
         .fresa2 {
-            position: relative;
-            top: -100px;
+            position: absolute;
+            top: -150px;
             @include size(600px, 277px);
-            right: -30%;
-            z-index: -1;
-
+            right: 250px;
         }
 
-        .lala {
+        .fresa3 {
+            float: right;
+            position: absolute;
+            right: 10px;
+            top: 700px;
+        }
+
+        .fresa5 {
+            position: relative;
+            left: -30%;
+            top: -200px;
+            transform: rotate(750deg);
+        }
+
+        .container {
             @include flex(center, center, row);
             position: relative;
             top: -170px;
-            z-index: 2;
-            
+
             .bote {
-                width: 399px;
-                height: 755px;
-                float: left;
                 @include flex(center, center, row);
+                @include size(399px, 755px);
             }
 
             .presentation {
                 @include flex(center, center, column);
                 font-family: "Open Sans";
                 font-size: 14px;
-                width: 40%;
+                width: 35%;
 
                 .flavor {
                     @include flex(center, left, row);
@@ -85,7 +92,7 @@
 
                 .description {
                     text-align: left;
-                    font-weight: 500;
+                    font-weight: 600;
                     color: $black;
                     font-family: "Open Sans Light";
                     font-size: 17px;
@@ -95,7 +102,7 @@
 
                 .btn {
                     width: 100%;
-                    outline:none;
+                    outline: none;
                     button {
                         background-color: $darkish-purple;
                         color: $white;
@@ -130,58 +137,49 @@
                 @include size(50px, 50px);
                 @include flex(center, center, row);
                 position: relative;
-                bottom: -100px;
+                bottom: -70px;
+                left: -40%;
             }
         }
-
-        .fresa3 {
-            float: right;
-            position: relative;
-            margin-right: 70px;
-            top: -400px;
-
-        }
-    }
-
-    .fresa4 {
-        @include flex(left, flex-start, column);
-        float: left;
-        position: relative;
-        top: -400px;
-        z-index: 1;
-        
     }
 }
 
 @media only screen and (min-width: 320px) and (max-width: 900px) {
     .home {
-        .fresa3, .fresa4 {
+        .fresa3 {
             display: none;
         }
-        .component {
 
-            &::after{
-                bottom: 20%;
+        .component {
+            &::after {
+                height: calc(115% - 300px);
+                bottom: 32%;
                 transform: skewY(8deg);
             }
 
             .fresa2 {
-                position: relative;
+                position: absolute;
                 top: -100px;
-                right: -40%;
-                z-index: -1;
+                right: 5%;
+                @include size(210px, 110px);
             }
-            .lala {
-                top: -200px;
+
+            .container {
+                position: relative;
+                left: -10%;
+                top: -300px;
                 @include flex(center, center, column);
                 .bote {
                     @include size(230px, 400px);
                 }
 
                 .presentation {
-                    width: 80%;
+                    width: 50%;
+                    position: relative;
+                    top: -50px;
                     .flavor {
-                        ul{
+                        font-size: 14px;
+                        ul {
                             li {
                                 background-color: $light-pink;
                             }
@@ -193,6 +191,7 @@
 
                     .description {
                         width: 100%;
+                        font-size: 14px;
                     }
 
                     .btn {
@@ -211,15 +210,13 @@
                     }
 
                     .arrow {
+                        margin-top: 20%;
                         position: relative;
-                        bottom: -30px;
+                        bottom: -10px;
+                        left: 0;
                     }
                 }
             }
-        }
-
-        .arrow {
-            margin-top: 8%;
         }
     }
 }

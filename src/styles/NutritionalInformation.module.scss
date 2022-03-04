@@ -2,79 +2,110 @@
 @import "../scss/mixins.scss";
 
 .information {
-    @include flex(center, center, row);
-    .fresa6 {
-        @include flex(end, end, row);
-        padding-right: 0;
+    @include flex(center, center, column);
+    position: relative;
+    z-index: 5;
+    height: calc(600px - 100px);
+    bottom: -300px;
+
+    .fresa4 {
         position: relative;
-        right: -30%;
+        left: -47%;
+        top: 150px;
+    }
+
+    .fresa5 {
+        position: relative;
+        bottom: -60%;
+        left: -45%;
+    }
+
+    .fresa6 {
+        position: relative;
+        right: -47%;
+        top: -90%;
     }
 
     .fresa7 {
-        display: none;
+        position: relative;
+        bottom: 70%;
+        left: -48%;
+    }
+
+    .fresa8 {
+        position: relative;
+        right: -45%;
+        top: -140%;
+    }
+
+    .fresa9 {
+        position: relative;
+        top: -200%;
+        left: -25%;
     }
     .data {
-        width: 150%;
-        background-color: rebeccapurple;
+        width: 90%;
+        padding-left: 5%;
+        padding-right: 5%;
+        @include flex(center, center, row);
+        font-size: 14px;
         .bebibleData {
-            font-size: 14px;
-            float: left;
-            @include flex(left, center, column);
-            margin: 4%;
             .title {
                 color: $darkish-purple;
                 font-family: "Open Sans Light";
                 font-size: 32px;
+                float: left;
                 text-align: left;
+                width: 100%;
             }
-            .data {
-                list-style: none;
-                padding: 0;
-                font-family: "Open Sans Bold";
-                text-align: left;
-            }
+            .left {
+                float: left;
+                ul {
+                    text-align: left;
+                    padding-left: 0;
+                    padding-bottom: 10%;
+                    li {
+                        list-style: none;
+                        font-family: "Open Sans Bold";
+                    }
+                }
 
-            .ingredients {
-                font-family: "Open Sans";
-                text-align: left;
-                width: 241px;
-                .ingredientsTitle,
-                .ingredientsList {
-                    font-size: 14px;
+                .ingredients {
+                    font-family: "Open Sans";
+                    text-align: left;
+                    width: 300px;
+
+                    h3,
+                    .ingredientsList {
+                        font-size: 14px;
+                        margin: 0;
+                    }
                 }
             }
         }
 
-        .informationList {
-            background-color: $snow;
-            color: $darkish-purple;
-            size: 14px;
-            font-family: "Open Sans Light";
-            @include flex(center, center, row);
-            width: 50%;
-            padding: 1%;
-
-            ul {
-                li {
-                    margin-bottom: 7%;
-                }
-            }
-
-            .informationTitle,
-            .informationData {
-                list-style: none;
-                float: left;
+        .right {
+            float: right;
+            width: 65%;
+            .informationList {
+                background-color: $snow;
+                color: $darkish-purple;
+                size: 14px;
+                font-family: "Open Sans Light";
+                @include flex(stretch, flex-start, row);
                 text-align: right;
-                margin: 2%;
-            }
 
-            .informationData {
-                text-align: left;
                 ul {
-                    margin-bottom: 2%;
+                    list-style: none;
+                    width: 100%;
                     li {
-                        margin-bottom: 2%;
+                        padding-bottom: 7%;
                     }
+                }
+
+                .informationData {
+                    text-align: left;
+                    width: 97%;
                 }
             }
         }
@@ -86,34 +117,42 @@
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 700px) {
+@media only screen and (min-width: 320px) and (max-width: 900px) {
     .information {
-        @include flex(center, flex-start, column);
-        padding: 0;
+        @include flex(center, center, row);
+        right: -20%;
+        bottom: 100px;
 
         .fresa6 {
             position: relative;
-            top: -800px;
-            right: -40%;
+            top: -30%;
+            right: -2%;
+            z-index: 2;
         }
 
         .fresa7 {
-            @include flex(flex-start, flex-start, row);
             position: relative;
-            left: -45%;
+            left: -110%;
+            bottom: -10%;
             z-index: 1;
-            bottom: -570px;
         }
 
-        .title {
-            font-size: 20px;
+        .fresa4,
+        .fresa5,
+        .fresa8,
+        .fresa9 {
+            display: none;
         }
-
-        .bebibleData {
-            font-size: 14px;
-            .ingredients {
+        .data {
+            .bebibleData {
                 width: 100%;
-                .ingredientsList {
+                padding-left: 5%;
+                .title {
+                    font-size: 20px;
+                }
+
+                .right {
+                    padding-top: 10%;
                     width: 100%;
                 }
             }

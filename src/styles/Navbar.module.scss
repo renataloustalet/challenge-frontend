@@ -1,5 +1,6 @@
 @import "../scss/variables.scss";
 @import "../scss/mixins.scss";
+@import "../scss/placeholder.scss";
 
 .container {
     height: 100px;
@@ -7,24 +8,33 @@
     background-color: $white-67;
     z-index: 1;
     position: relative;
-    img {
-        cursor: pointer;
+    transition: 0.3s ease padding;
+
+    a {
+        display: flex;
+        padding: 20px;
+        text-decoration: none;
+        color: $black;
+
+        &:hover {
+            @extend %hover;
+        }
     }
 
     .menu {
         @include flex(center, space-between, row);
         font-family: "Open Sans";
         size: 16px;
-        cursor: pointer;
-        a {
-            display: flex;
-            padding: 20px;
-            text-decoration: none;
-            color: $black;
-        }
 
         .socialMedia {
-            @include flex(center, space-around, row);
+            @include flex(center, center, row);
+            a {
+                padding: 5px;
+
+                &:hover {
+                    @extend %hover;
+                }
+            }
         }
     }
 
@@ -40,33 +50,26 @@
         padding-left: 5%;
 
         .menu {
-            display: none;
+           display: none;
         }
 
-        .mobile {
+       .mobile {
             position: absolute;
             display: block;
             background-color: $white-67;
             left: 0;
             top: 100px;
             @include flex(center, center, column);
-            transition: all 0.5s ease-out;
             width: 100%;
 
             a {
                 text-decoration: none;
                 color: $black;
             }
-        }
-
-        .open {
-            transition: 0.2s ease right;
-            right: 0;
-        }
+        } 
 
         .menuHamburger {
-            width: 32px;
-            height: 25px;
+            @include size(32px, 25px);
             display: flex;
 
             button {
@@ -74,8 +77,13 @@
                 background: none;
                 border: 0;
                 padding: 0;
-                width: 50px;
-                height: 50px;
+                @include size(50px, 50px);
+                outline: none;
+
+                &:active {
+                    transform: scale(0.98);
+                    border-radius: 0;
+                }
 
                 span {
                     border-radius: 5px;
@@ -85,25 +93,27 @@
                     margin: 3px;
                     height: 3px;
                     float: right;
+
+                    .open {
+                        .middleLine {
+                            width: 50%;
+                        }
+    
+                        .topLine {
+                            transform: translateY(9px) rotate(45deg);
+                        }
+    
+                        .middleLine {
+                            opacity: 0;
+                        }
+    
+                        .bottomLine {
+                            transform: translateY(-9px) rotate(-45deg);
+                        }
+                    }
                 }
 
-                .open {
-                    .middleLine {
-                        width: 50%;
-                    }
-
-                    .topLine {
-                        transform: translateY(9px) rotate(45deg);
-                    }
-
-                    .middleLine {
-                        opacity: 0;
-                    }
-
-                    .bottomLine {
-                        transform: translateY(-9px) rotate(-45deg);
-                    }
-                }
+                
             }
         }
     }

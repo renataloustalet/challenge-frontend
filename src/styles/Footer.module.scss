@@ -1,5 +1,6 @@
 @import "../scss/variables.scss";
 @import "../scss/mixins.scss";
+@import "../scss/placeholder.scss";
 
 .footer {
     @include flex(center, space-between, row);
@@ -13,10 +14,8 @@
 
         img {
             cursor: pointer;
-
             &:hover {
-                opacity: 0.5;
-                transition: all 0.8s;
+                @extend %hover;
             }
         }
 
@@ -37,6 +36,12 @@
                 text-decoration: none;
                 color: $black;
             }
+
+            a {
+                &:hover {
+                    @extend %hover;
+                }
+            }
         }
 
         .imagesMobile {
@@ -49,7 +54,41 @@
     }
 }
 
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+@media only screen and (min-width: 320px) and (max-width: 821px) {
+    .footer {
+        @include flex(center, center, column);
+
+        .logo,
+        .danone {
+            display: none;
+        }
+
+        .sections {
+            @include flex(center, center, column);
+            .imagesMobile {
+                @include flex(center, space-around, row);
+                padding-bottom: 1%;
+                width: 100%;
+                .logoMobile {
+                    filter: grayscale(100%);
+                    @include size(79px, 30px);
+                }
+            }
+
+            .terms,
+            .rightsReserved {
+                @include flex(center, center, row);
+                margin-left: 0;
+                a,
+                p {
+                    font-size: 11px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 812px) and (max-width: 900px) {
     .footer {
         @include flex(center, center, column);
 
@@ -73,6 +112,7 @@
             .terms,
             .rightsReserved {
                 @include flex(center, center, row);
+                a,
                 p {
                     font-size: 11px;
                 }

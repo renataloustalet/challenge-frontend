@@ -6,15 +6,15 @@ import flecha from '../assets/flecha.svg'
 import kcal from '../assets/logos/img-100-kcal.png'
 import fresa2 from '../assets/strawberries/img-fresas-2.png'
 import fresa3 from '../assets/strawberries/img-fresas-3.png'
-import fresa4 from '../assets/strawberries/img-fresas-4.png'
 import fresa5 from '../assets/strawberries/img-fresas-5@2x.png'
 
 function Home() {
     return (
         <div className={css.home} id='home'>
             <div className={css.component}>
-                <img src={fresa2} alt='fresa 2' className={css.fresa2} />
-                <div className={css.lala}>
+                <img src={fresa2} alt='fresa' className={css.fresa2} />
+                <img src={fresa5} alt='fresa' className={css.fresa5} />
+                <div className={css.container}>
                     <img src={bote} alt='bote' className={css.bote} />
                     <div className={css.presentation}>
                         <div className={css.flavor}>
@@ -48,10 +48,8 @@ function Home() {
                     </div>
 
                 </div>
-                <img src={fresa3} alt='fresa 3' className={css.fresa3} /> 
-             
+                <img src={fresa3} alt='fresa' className={css.fresa3} />
             </div>
-            <img src={fresa4} alt='fresa 4' className={css.fresa4} />
         </div>
     )
 }
